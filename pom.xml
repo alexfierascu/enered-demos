@@ -14,6 +14,7 @@
         <module>BankingApp</module>
         <module>PrincipiiOOP</module>
         <module>SuperDemo</module>
+        <module>LombokExample</module>
     </modules>
 
     <properties>
