@@ -12,16 +12,16 @@
         <module>StaticDemo</module>
         <module>DesignPattern-Singleton</module>
         <module>BankingApp</module>
-        <module>PrincipiiOOP</module>
+        <module>PrincipiileOOP</module>
         <module>SuperDemo</module>
         <module>LombokExample</module>
+        <module>PrincipiileOOPDemoToate</module>
     </modules>
 
     <properties>
         <junit_version>5.5.0</junit_version>
         <lombok_version>1.18.8</lombok_version>
     </properties>
-
 
 
     <dependencies>
@@ -42,8 +42,19 @@
         </dependency>
 
 
-
-
     </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
 </project>
