@@ -15,6 +15,7 @@ public class TesteIncapsulare {
 
     Mircea.setNumeOm("Decebal");
     Assertions.assertEquals("Decebal", Mircea.getNumeOm());
+
   }
 
 
