@@ -17,6 +17,7 @@
         <module>LombokExample</module>
         <module>PrincipiileOOPDemoToate</module>
         <module>DesignPattern-Factory</module>
+        <module>Algorithms</module>
     </modules>
 
     <properties>
