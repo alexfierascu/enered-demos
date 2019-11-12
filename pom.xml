@@ -18,6 +18,9 @@
         <module>PrincipiileOOPDemoToate</module>
         <module>DesignPattern-Factory</module>
         <module>Algorithms</module>
+        <module>lambda-expressions</module>
+        <module>JavaBasics</module>
+        <module>JavaOOPDemo1-Clase</module>
     </modules>
 
     <properties>
