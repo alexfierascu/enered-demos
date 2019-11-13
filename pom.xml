@@ -21,6 +21,7 @@
         <module>lambda-expressions</module>
         <module>JavaBasics</module>
         <module>JavaOOPDemo1-Clase</module>
+        <module>Java101</module>
     </modules>
 
     <properties>
