@@ -3,11 +3,12 @@ import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.nio.file.Files;
 import java.nio.file.Paths;
+import java.util.Vector;
 import java.util.stream.Stream;
 
 
 public class Functii {
-  
+
     public static String citireCuvant() {
         String valoareGhicit = null;
         String path = "E:\\JAVA\\enered-demos\\Java101\\src\\main\\resources\\spanzuratoare.txt";
@@ -20,20 +21,21 @@ public class Functii {
         valoareGhicit = content.toString();
         return valoareGhicit;
     }
-  
+
 
     public static Vector stringToVector(String s) {
         Vector myVec = new Vector();
         char[] sChars = s.toCharArray();
-        for(int i = 0; i < s.length(); ++i) {
+        for (int i = 0; i < s.length(); ++i) {
             myVec.add(sChars[i]);
         }
         return (myVec);
     }
-    
-     public static void afisareCuvantModAscuns(Vector cuvant){
-        for (int i=0; i<cuvant.length;i++){
+
+    public static void afisareCuvantModAscuns(Vector cuvant) {
+        for (int i = 0; i < cuvant.size(); i++) {
             System.out.print("*");
         }
 
+    }
 }
