@@ -12,4 +12,10 @@ public class Functii {
         }
         return (myVec);
     }
+    
+     public static void afisareCuvantModAscuns(String[] cuvant){
+        //cuvant={"a","l","c"};
+        for (int i=0; i<cuvant.length;i++){
+            System.out.print("*");
+        }
 }
