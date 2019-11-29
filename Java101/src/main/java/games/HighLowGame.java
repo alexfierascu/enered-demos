@@ -1,3 +1,6 @@
+package games;
+
+
 import java.util.Random;
 import java.util.Scanner;
 
@@ -17,18 +20,17 @@ public class HighLowGame {
     while(numarGhicit!=numarDeGhicit) {
       System.out.println("Introduceti un numar");
       numarGhicit=scanner.nextInt();
+      numarIncercari++;
       if(numarGhicit<numarDeGhicit)
       {
         System.out.println("Incercati cu un numar mai mare!");
-        numarIncercari++;
+
       }
       else if(numarGhicit>numarDeGhicit)
       {
         System.out.println("Incercati cu un numar mai mic!");
-        numarIncercari++;
       } else {
         System.out.println("Numarul ghicit! Acesta este " + numarDeGhicit);
-        numarIncercari++;
       }
     }
     System.out.println("Ati ghicit numarul " + numarDeGhicit + " din " + numarIncercari +
@@ -38,7 +40,7 @@ public class HighLowGame {
   static int generateRandomNumber() {
 
     Random random = new Random();
-    int number= random.nextInt(10);
+    int number= random.nextInt(100);
     return number;
   }
 
