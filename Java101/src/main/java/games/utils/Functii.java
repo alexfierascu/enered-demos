@@ -34,7 +34,7 @@ public class Functii {
     for (int i = 0; i < s.length(); ++i) {
       myVec.add(sChars[i]);
     }
-    return (myVec);
+    return myVec;
   }
 
 
@@ -45,4 +45,6 @@ public class Functii {
     }
 
   }
+
+
 }
