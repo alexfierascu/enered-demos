@@ -24,13 +24,13 @@ public class Functii {
         return valoareGhicit;
     }
 
-    public static Vector stringToVector(String s) {
+    public static void stringToVector(String s) {
         Vector myVec = new Vector();
         char[] sChars = s.toCharArray();
         for (int i = 0; i < s.length(); ++i) {
             myVec.add(sChars[i]);
         }
-        return myVec;
+        //return myVec;
     }
 
     public static void afisareCuvantModAscuns(Vector cuvant) {
@@ -38,6 +38,7 @@ public class Functii {
             System.out.print("*");
         }
     }
+
     public static String citireLitera() {
         Scanner scan = new Scanner(System.in);
         System.out.print("Introdu o litera: ");
@@ -46,4 +47,17 @@ public class Functii {
         return (l);
     }
 
+//    public static void ghicireCuvant(Vector x) {
+//        int count = 7;
+//        while (count == 0) {
+//            String literaCitita = citireLitera();
+//            for (int i = 0; i < x.size(); i++) {
+//                if (literaCitita == x(i)){
+//
+//                }
+//
+//            }
+//        }
+//
+//    }
 }
