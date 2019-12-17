@@ -9,7 +9,9 @@ public class Spanzuratoarea {
 
   public static void main (String[] args) {
 
-    afisareCuvantModAscuns(stringToVector(citireCuvant()))
+    //afisareCuvantModAscuns(stringToVector(citireCuvant()));
+
+ghicireCuvant();
   }
 
 }
