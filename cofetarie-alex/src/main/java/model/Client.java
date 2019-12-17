@@ -7,7 +7,10 @@ import lombok.Data;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import utils.PaymentMethods;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 
 import static utils.PaymentMethods.CARD;
 
@@ -82,11 +85,13 @@ public class Client implements ClientModelInterface {
 
 
   @Override
-  public void makePayment (PaymentMethods metodaPlata, double valoarePlata) {
+  public void makePayment (double valoarePlata) throws IOException {
+
+    String metodaPlata = citireMetodaPlata();
 
     double discount = 20;
-    if (isClient && metodaPlata.equals(CARD)) {
-      valoarePlata = valoarePlata - (valoarePlata * discount) / 100;
+    if (isClient && metodaPlata.equals(CARD.toString())) {
+      valoarePlata = valoarePlata - ((valoarePlata * discount) / 100);
       System.out.println("Pentru ca ati ales plata cu cardul aveti un discount de " + discount +
                              "%! Suma finala de platit este " + valoarePlata + " RON");
     } else if (isClient) {
@@ -97,6 +102,15 @@ public class Client implements ClientModelInterface {
     } else {
       System.out.println("Aveti de platit suma de " + valoarePlata + " RON!");
     }
+  }
+
+
+  public String citireMetodaPlata () throws IOException {
+
+    BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+    System.out.println("Cu ce vreti sa platiti? CASH/ CARD?");
+    String metodaPlata = in.readLine().toUpperCase();
+    return metodaPlata;
   }
 }
 

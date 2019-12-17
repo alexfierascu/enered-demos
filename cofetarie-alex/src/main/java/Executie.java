@@ -1,11 +1,11 @@
 import model.Client;
 
-import static utils.PaymentMethods.CASH;
+import java.io.IOException;
 
 
 public class Executie {
 
-  public static void main (String[] args) {
+  public static void main (String[] args) throws IOException {
 
     Client Mircea = new Client();
     Mircea.setNume("Popescu");
@@ -13,23 +13,9 @@ public class Executie {
     Mircea.setAdresa("Strada Trei Fantani");
     Mircea.setVarsta(23);
 
-    /*System.out.println(Mircea.getAdresa());
-
-    Client Paul = new Client();
-    Paul.builder()
-        .nume("Decebal")
-        .prenume("Paul")
-        .adresa("Strada Leonardo 3")
-        .varsta(34)
-        .build();
-
-
-    Mircea.updateClient("nume","Saulescu");
-    System.out.println(Mircea.getNume());*/
-
-    Mircea.deliverToClient();
+    //Mircea.deliverToClient();
     Mircea.setClient(true);
-    Mircea.makePayment(CASH, 100);
+    Mircea.makePayment(100);
 
 
   }

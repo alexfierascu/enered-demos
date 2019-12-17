@@ -1,7 +1,7 @@
 package model;
 
 
-import utils.PaymentMethods;
+import java.io.IOException;
 
 
 public interface ClientModelInterface {
@@ -18,9 +18,6 @@ public interface ClientModelInterface {
   public void deliverToClient ();
 
 
-  public void makePayment (PaymentMethods metodaPlata, double valoare);
-
-
-  public boolean isClient ();
+  public void makePayment (double valoare) throws IOException;
 
 }
