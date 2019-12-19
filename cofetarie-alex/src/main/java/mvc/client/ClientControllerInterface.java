@@ -1,10 +1,10 @@
-package model;
+package mvc.client;
 
 
 import java.io.IOException;
 
 
-public interface ClientModelInterface {
+public interface ClientControllerInterface {
 
   public void addClient ();
 

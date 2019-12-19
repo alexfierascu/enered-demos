@@ -1,21 +1,31 @@
 import model.Client;
 
-import java.io.IOException;
-
 
 public class Executie {
 
-  public static void main (String[] args) throws IOException {
+  public static void main (String[] args) {
 
-    Client Mircea = new Client();
-    Mircea.setNumeClient("Popescu");
-    Mircea.setPrenumeClient("Mircea-Alexandru");
-    Mircea.setAdresaClient("Strada Trei Fantani");
-    Mircea.setVarstaClient(23);
+    Client client = construiereClientDefault();
+    ClientControllerImpl Cristi = new ClientControllerImpl(client);
 
-    Mircea.setClientFidel(true);
-    Mircea.makePayment(100);
+    Cristi.afisareNumeClient();
+    Cristi.updateClient("nume", "Motrescu");
+    Cristi.afisareNumeClient();
 
+
+    //Cristi.makePayment(100);
+
+  }
+
+
+  private static Client construiereClientDefault () {
+
+    Client c = new Client();
+    c.setNume("Popescu");
+    c.setPrenume("Mircea-Alexandru");
+    c.setAdresa("Strada Trei Fantani");
+    c.setVarsta(23);
+    return c;
   }
 
 }
