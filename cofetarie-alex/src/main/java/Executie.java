@@ -1,9 +1,11 @@
 import model.Client;
 
+import java.io.IOException;
+
 
 public class Executie {
 
-  public static void main (String[] args) {
+  public static void main (String[] args) throws IOException {
 
     Client client = construiereClientDefault();
     ClientControllerImpl Cristi = new ClientControllerImpl(client);
@@ -13,7 +15,7 @@ public class Executie {
     Cristi.afisareNumeClient();
 
 
-    //Cristi.makePayment(100);
+    Cristi.makePayment(100);
 
   }
 
