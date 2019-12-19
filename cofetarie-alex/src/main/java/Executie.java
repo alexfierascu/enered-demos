@@ -8,15 +8,13 @@ public class Executie {
   public static void main (String[] args) throws IOException {
 
     Client Mircea = new Client();
-    Mircea.setNume("Popescu");
-    Mircea.setPrenume("Mircea-Alexandru");
-    Mircea.setAdresa("Strada Trei Fantani");
-    Mircea.setVarsta(23);
+    Mircea.setNumeClient("Popescu");
+    Mircea.setPrenumeClient("Mircea-Alexandru");
+    Mircea.setAdresaClient("Strada Trei Fantani");
+    Mircea.setVarstaClient(23);
 
-    //Mircea.deliverToClient();
-    Mircea.setClient(true);
+    Mircea.setClientFidel(true);
     Mircea.makePayment(100);
-
 
   }
 

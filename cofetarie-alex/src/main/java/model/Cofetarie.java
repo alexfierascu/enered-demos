@@ -13,10 +13,7 @@ import lombok.Setter;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class ProdusCofetarie {
-
-  private String numeProdusCofetarie;
-
-  private double pretProdusCofetarie;
+public class Cofetarie {
+  private String numeCoferatrie;
 
 }

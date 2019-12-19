@@ -29,8 +29,8 @@ public class ArrayListExemple {
 
     System.out.println("Exercitii cu Array Lists");
 
-    ArrayList<String> pra = new ArrayList<>();
-    ArrayList<String> cra = new ArrayList<>();
+    ArrayList<String> pra = new ArrayList<String>();
+    ArrayList<String> cra = new ArrayList<String>();
 
     pra.add("coco"); // adaugam un element
     pra.add("nico"); // adaugam un element

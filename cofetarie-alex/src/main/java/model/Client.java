@@ -23,15 +23,15 @@ import static utils.PaymentMethods.CARD;
 @Builder
 public class Client implements ClientModelInterface {
 
-  private String nume;
+  private String numeClient;
 
-  private String prenume;
+  private String prenumeClient;
 
-  private String adresa;
+  private String adresaClient;
 
-  private int varsta;
+  private int varstaClient;
 
-  private boolean isClient;
+  private boolean clientFidel;
 
 
   @Override
@@ -50,17 +50,17 @@ public class Client implements ClientModelInterface {
   public String updateClient (String proprietate, String valoare) {
 
     switch (proprietate) {
-      case "nume":
-        setNume(valoare);
+      case "numeClient":
+        setNumeClient(valoare);
         break;
-      case "prenume":
-        setPrenume(valoare);
+      case "prenumeClient":
+        setPrenumeClient(valoare);
         break;
-      case "adresa":
-        setAdresa(valoare);
+      case "adresaClient":
+        setAdresaClient(valoare);
         break;
-      case "varsta":
-        setVarsta(Integer.parseInt(valoare));
+      case "varstaClient":
+        setVarstaClient(Integer.parseInt(valoare));
         break;
       default:
         System.out.println("Proprietatea nu a fost gasita");
@@ -73,13 +73,13 @@ public class Client implements ClientModelInterface {
   @Override
   public void deliverToClient () {
 
-    System.out.println("Comanda va fi livrata la " + getAdresa());
+    System.out.println("Comanda va fi livrata la " + getAdresaClient());
   }
 
 
   public void deliverToClient (String newAddress) {
 
-    setAdresa(newAddress);
+    setAdresaClient(newAddress);
     System.out.println("Comanda va fi livrata la " + newAddress);
   }
 
@@ -90,14 +90,17 @@ public class Client implements ClientModelInterface {
     String metodaPlata = citireMetodaPlata();
 
     double discount = 20;
-    if (isClient && metodaPlata.equals(CARD.toString())) {
+    if (clientFidel && metodaPlata.equals(CARD.toString())) {
       valoarePlata = valoarePlata - ((valoarePlata * discount) / 100);
-      System.out.println("Pentru ca ati ales plata cu cardul aveti un discount de " + discount +
+      System.out.println("Pentru ca sunteti client fidel si ati ales plata cu cardul " +
+                             "aveti un discount de" +
+                             " " + discount +
                              "%! Suma finala de platit este " + valoarePlata + " RON");
-    } else if (isClient) {
+    } else if (clientFidel) {
       discount -= 10;
       valoarePlata = valoarePlata - discount;
-      System.out.println("Pentru ca ati ales plata cash aveti un discount de " + discount +
+      System.out.println("Pentru ca sunteti client fidel si ati ales plata cash aveti un " +
+                             "discount de " + discount +
                              "%! Suma finala de platit este " + valoarePlata + " RON");
     } else {
       System.out.println("Aveti de platit suma de " + valoarePlata + " RON!");
@@ -108,7 +111,7 @@ public class Client implements ClientModelInterface {
   public String citireMetodaPlata () throws IOException {
 
     BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-    System.out.println("Cu ce vreti sa platiti? CASH/ CARD?");
+    System.out.println("Optiunile de plata sunt cash sau card! \nCu ce vreti sa platiti? ?");
     String metodaPlata = in.readLine().toUpperCase();
     return metodaPlata;
   }
