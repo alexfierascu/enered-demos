@@ -26,6 +26,7 @@ public class Executie {
     c.setNume("Popescu");
     c.setPrenume("Mircea-Alexandru");
     c.setAdresa("Strada Trei Fantani");
+    c.setClientFidel(true);
     c.setVarsta(23);
     return c;
   }

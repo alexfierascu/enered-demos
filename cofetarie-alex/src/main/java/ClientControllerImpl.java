@@ -6,6 +6,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import static utils.ANSIConsoleColours.BLUE;
+import static utils.ANSIConsoleColours.RED;
 import static utils.PaymentMethods.CARD;
 
 
@@ -33,7 +35,8 @@ public class ClientControllerImpl implements ClientControllerInterface, ClientVi
 
 
   @Override
-  public String updateClient (String proprietate, String valoare) {
+  public void updateClient (String proprietate, String valoare) {
+
 
     switch (proprietate) {
       case "nume":
@@ -52,7 +55,6 @@ public class ClientControllerImpl implements ClientControllerInterface, ClientVi
         System.out.println("Proprietatea nu a fost gasita");
     }
     System.out.println("Proprietatea " + proprietate + " a fost schimbata cu " + valoare);
-    return valoare;
   }
 
 
@@ -78,14 +80,16 @@ public class ClientControllerImpl implements ClientControllerInterface, ClientVi
     double discount = 20;
     if (modelClient.isClientFidel() && metodaPlata.equals(CARD.toString())) {
       valoarePlata = valoarePlata - ((valoarePlata * discount) / 100);
-      System.out.println("Pentru ca sunteti client fidel si ati ales plata cu cardul " +
+      System.out.println(RED + "Pentru ca sunteti client fidel si ati ales plata cu cardul " +
                              "aveti un discount de" +
                              " " + discount +
                              "%! Suma finala de platit este " + valoarePlata + " RON");
     } else if (modelClient.isClientFidel()) {
       discount -= 10;
       valoarePlata = valoarePlata - discount;
-      System.out.println("Pentru ca sunteti client fidel si ati ales plata cash aveti un " +
+      System.out.println(BLUE + "Pentru ca sunteti client fidel si ati ales plata cash aveti" +
+                             " " +
+                             "un " +
                              "discount de " + discount +
                              "%! Suma finala de platit este " + valoarePlata + " RON");
     } else {
@@ -94,11 +98,11 @@ public class ClientControllerImpl implements ClientControllerInterface, ClientVi
   }
 
 
-  public String citireMetodaPlata () throws IOException {
+  private String citireMetodaPlata () throws IOException {
 
     BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-    System.out.println("Optiunile de plata sunt cash sau card! \nCu ce vreti sa platiti? ?");
     String metodaPlata = in.readLine().toUpperCase();
+    System.out.println("Optiunile de plata sunt cash sau card! \nCu ce vreti sa platiti? ?");
     return metodaPlata;
   }
 

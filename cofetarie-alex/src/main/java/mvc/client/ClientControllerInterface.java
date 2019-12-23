@@ -6,18 +6,18 @@ import java.io.IOException;
 
 public interface ClientControllerInterface {
 
-  public void addClient ();
+  void addClient ();
 
 
-  public void removeClient ();
+  void removeClient ();
 
 
-  public String updateClient (String proprietate, String valoare);
+  void updateClient (String proprietate, String valoare);
 
 
-  public void deliverToClient ();
+  void deliverToClient ();
 
 
-  public void makePayment (double valoare) throws IOException;
+  void makePayment (double valoare) throws IOException;
 
 }
