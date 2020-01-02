@@ -1,4 +1,7 @@
-import model.Client;
+package cofetarie.controller;
+
+
+import cofetarie.model.Client;
 import mvc.client.ClientControllerInterface;
 import mvc.client.ClientViewInterface;
 
@@ -11,12 +14,12 @@ import static utils.ANSIConsoleColours.RED;
 import static utils.PaymentMethods.CARD;
 
 
-public class ClientControllerImpl implements ClientControllerInterface, ClientViewInterface {
+public class ClientController implements ClientControllerInterface, ClientViewInterface {
 
   private Client modelClient;
 
 
-  public ClientControllerImpl (Client model) {
+  public ClientController (Client model) {
 
     this.modelClient = model;
   }
@@ -100,10 +103,9 @@ public class ClientControllerImpl implements ClientControllerInterface, ClientVi
 
   private String citireMetodaPlata () throws IOException {
 
+    System.out.println("Optiunile de plata sunt cash sau card! \nCu ce vreti sa platiti?");
     BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-    String metodaPlata = in.readLine().toUpperCase();
-    System.out.println("Optiunile de plata sunt cash sau card! \nCu ce vreti sa platiti? ?");
-    return metodaPlata;
+    return in.readLine().toUpperCase();
   }
 
 

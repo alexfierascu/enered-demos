@@ -1,4 +1,5 @@
-import model.Client;
+import cofetarie.controller.ClientController;
+import cofetarie.model.Client;
 
 import java.io.IOException;
 
@@ -8,7 +9,8 @@ public class Executie {
   public static void main (String[] args) throws IOException {
 
     Client client = construiereClientDefault();
-    ClientControllerImpl Cristi = new ClientControllerImpl(client);
+
+    ClientController Cristi = new ClientController(client);
 
     Cristi.afisareNumeClient();
     Cristi.updateClient("nume", "Motrescu");

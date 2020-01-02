@@ -1,4 +1,4 @@
-package model;
+package cofetarie.model;
 
 
 public class EvenimenteSpeciale {
