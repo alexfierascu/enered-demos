@@ -117,51 +117,7 @@ public class ClientController implements ClientControllerInterface {
 
   public void afisareSpecialeInformatiiClient () {
 
-    viewClient.afisareInformatiiClient(modelClient.getNume(), modelClient.getPrenume());
+    viewClient.afisareInformatiiClient(modelClient);
 
   }
-
-
- /* @Override
-  public void afisareInformatiiClient () {
-
-    System.out.println("Clientul " + modelClient.getPrenume() + " " + modelClient.getNume() + " " +
-                           "in varsta de " + modelClient.getVarsta() + " " +
-                           "locuieste " + modelClient.getAdresa());
-  }
-
-
-  @Override
-  public void afisareNumeClient () {
-
-    System.out.println(modelClient.getNume());
-  }
-
-
-  @Override
-  public void afisarePrenumeClient () {
-
-    System.out.println(modelClient.getPrenume());
-  }
-
-
-  @Override
-  public void afisareAdresaClient () {
-
-    System.out.println(modelClient.getAdresa());
-  }
-
-
-  @Override
-  public void afisareVarstaClient () {
-
-    System.out.println(modelClient.getVarsta());
-  }
-
-
-  @Override
-  public void afisareIsClientFidel () {
-
-    System.out.println(modelClient.isClientFidel());
-  }*/
 }

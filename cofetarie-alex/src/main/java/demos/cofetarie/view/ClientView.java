@@ -1,11 +1,17 @@
 package demos.cofetarie.view;
 
 
-public class ClientView {
+import demos.cofetarie.interfaces.ClientViewInterface;
+import demos.cofetarie.model.Client;
 
-  public void afisareNumeSiAdresaClient (String nume, String adresa) {
 
-    System.out.println("Clientul meu are numele de " + nume + " si locuieste la " + adresa);
+public class ClientView implements ClientViewInterface {
+
+  @Override
+  public void afisareInformatiiClient (Client c) {
+
+    System.out.println("Clientul " + c.getNume() + " " + c.getPrenume() + " " +
+                           "in varsta de " + c.getVarsta() + " " +
+                           "locuieste in " + c.getAdresa());
   }
-
 }

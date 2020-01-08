@@ -1,23 +1,11 @@
 package demos.cofetarie.interfaces;
 
 
+import demos.cofetarie.model.Client;
+
+
 public interface ClientViewInterface {
 
-  void afisareInformatiiClient ();
-
-
-  void afisareNumeClient ();
-
-
-  void afisarePrenumeClient ();
-
-
-  void afisareAdresaClient ();
-
-
-  void afisareVarstaClient ();
-
-
-  void afisareIsClientFidel ();
+  void afisareInformatiiClient (Client client);
 
 }
