@@ -1,4 +1,4 @@
-package cofetarie.model;
+package demos.cofetarie.model;
 
 
 import lombok.AllArgsConstructor;

@@ -1,4 +1,4 @@
-package mvc.client;
+package demos.cofetarie.interfaces;
 
 
 public interface ClientViewInterface {

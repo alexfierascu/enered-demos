@@ -1,4 +1,4 @@
-package utils;
+package demos.cofetarie.utils;
 
 
 public class ANSIConsoleColours {

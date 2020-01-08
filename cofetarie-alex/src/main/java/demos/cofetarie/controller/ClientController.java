@@ -1,39 +1,31 @@
-package cofetarie.controller;
+package demos.cofetarie.controller;
 
 
-import cofetarie.model.Client;
-import mvc.client.ClientControllerInterface;
-import mvc.client.ClientViewInterface;
+import demos.cofetarie.interfaces.ClientControllerInterface;
+import demos.cofetarie.model.Client;
+import demos.cofetarie.view.ClientView;
 
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
-import static utils.ANSIConsoleColours.BLUE;
-import static utils.ANSIConsoleColours.RED;
-import static utils.PaymentMethods.CARD;
+import static demos.cofetarie.utils.ANSIConsoleColours.BLUE;
+import static demos.cofetarie.utils.ANSIConsoleColours.RED;
+import static demos.cofetarie.utils.PaymentMethods.CARD;
+import static demos.cofetarie.utils.PaymentMethods.CASH;
 
 
-public class ClientController implements ClientControllerInterface, ClientViewInterface {
+public class ClientController implements ClientControllerInterface {
 
   private Client modelClient;
 
+  private ClientView viewClient;
 
-  public ClientController (Client model) {
+
+  public ClientController (Client model, ClientView view) {
 
     this.modelClient = model;
-  }
-
-
-  @Override
-  public void addClient () {
-
-  }
-
-
-  @Override
-  public void removeClient () {
-
+    this.viewClient = view;
   }
 
 
@@ -80,16 +72,17 @@ public class ClientController implements ClientControllerInterface, ClientViewIn
 
     String metodaPlata = citireMetodaPlata();
 
-    double discount = 20;
+    int discount = 0;
     if (modelClient.isClientFidel() && metodaPlata.equals(CARD.toString())) {
+      discount = 20;
       valoarePlata = valoarePlata - ((valoarePlata * discount) / 100);
       System.out.println(RED + "Pentru ca sunteti client fidel si ati ales plata cu cardul " +
                              "aveti un discount de" +
                              " " + discount +
                              "%! Suma finala de platit este " + valoarePlata + " RON");
     } else if (modelClient.isClientFidel()) {
-      discount -= 10;
-      valoarePlata = valoarePlata - discount;
+      discount = 10;
+      valoarePlata = valoarePlata - ((valoarePlata * discount) / 100);
       System.out.println(BLUE + "Pentru ca sunteti client fidel si ati ales plata cash aveti" +
                              " " +
                              "un " +
@@ -103,13 +96,33 @@ public class ClientController implements ClientControllerInterface, ClientViewIn
 
   private String citireMetodaPlata () throws IOException {
 
-    System.out.println("Optiunile de plata sunt cash sau card! \nCu ce vreti sa platiti?");
+    System.out.println("Optiunile de plata sunt " + CASH + " sau " + CARD + "!\nCu ce vreti sa " +
+                           "platiti?");
     BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
-    return in.readLine().toUpperCase();
+    String ceAmCitit = "";
+    boolean flag = false;
+    while (!flag) {
+      ceAmCitit = in.readLine().toUpperCase();
+      if (ceAmCitit.equals(CASH.toString()) || ceAmCitit.equals(CARD.toString())) {
+        flag = true;
+        return ceAmCitit;
+      } else {
+        flag = false;
+        System.out.println("Metoda de plata citita neacceptata!Mai incearca!");
+      }
+    }
+    return ceAmCitit;
   }
 
 
-  @Override
+  public void afisareSpecialeInformatiiClient () {
+
+    viewClient.afisareInformatiiClient(modelClient.getNume(), modelClient.getPrenume());
+
+  }
+
+
+ /* @Override
   public void afisareInformatiiClient () {
 
     System.out.println("Clientul " + modelClient.getPrenume() + " " + modelClient.getNume() + " " +
@@ -150,5 +163,5 @@ public class ClientController implements ClientControllerInterface, ClientViewIn
   public void afisareIsClientFidel () {
 
     System.out.println(modelClient.isClientFidel());
-  }
+  }*/
 }

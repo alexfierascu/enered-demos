@@ -1,16 +1,10 @@
-package mvc.client;
+package demos.cofetarie.interfaces;
 
 
 import java.io.IOException;
 
 
 public interface ClientControllerInterface {
-
-  void addClient ();
-
-
-  void removeClient ();
-
 
   void updateClient (String proprietate, String valoare);
 

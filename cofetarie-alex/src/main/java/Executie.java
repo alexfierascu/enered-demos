@@ -1,5 +1,6 @@
-import cofetarie.controller.ClientController;
-import cofetarie.model.Client;
+import demos.cofetarie.controller.ClientController;
+import demos.cofetarie.model.Client;
+import demos.cofetarie.view.ClientView;
 
 import java.io.IOException;
 
@@ -9,15 +10,15 @@ public class Executie {
   public static void main (String[] args) throws IOException {
 
     Client client = construiereClientDefault();
+    ClientView view = new ClientView();
 
-    ClientController Cristi = new ClientController(client);
+    ClientController Cristi = new ClientController(client, view);
 
-    Cristi.afisareNumeClient();
-    Cristi.updateClient("nume", "Motrescu");
-    Cristi.afisareNumeClient();
-
-
+//    Cristi.afisareNumeClient();
+//    Cristi.updateClient("nume", "Motrescu");
+//    Cristi.afisareNumeClient();
     Cristi.makePayment(100);
+    Cristi.afisareSpecialeInformatiiClient();
 
   }
 
