@@ -3,6 +3,7 @@ import demos.cofetarie.controller.CofetarieController;
 import demos.cofetarie.model.Client;
 import demos.cofetarie.model.Cofetarie;
 import demos.cofetarie.view.ClientView;
+import demos.cofetarie.view.CofetarieView;
 
 import java.io.IOException;
 
@@ -25,8 +26,9 @@ public class Executie {
 //    Cristi.makePayment(100);
 //    Cristi.afisareSpecialeInformatiiClient();
 
-//        CofetarieController Florinex = new CofetarieController(new Cofetarie());
-//        Florinex.addClient(client);
+        CofetarieController Florinex = new CofetarieController(new Cofetarie(), new CofetarieView());
+
+        Florinex.adaugaClient(client);
 
     }
 

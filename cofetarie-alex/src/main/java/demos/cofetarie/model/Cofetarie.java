@@ -18,4 +18,8 @@ public class Cofetarie {
 
     private List<Client> listaClienti = new ArrayList<>();
 
+    private List<ProdusCofetarie> produseCofetarie = new ArrayList<>();
+
+    private List<EvenimenteSpeciale> evenimenteCofetarie = new ArrayList<>();
+
 }
