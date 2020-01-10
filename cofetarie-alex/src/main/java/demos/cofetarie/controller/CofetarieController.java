@@ -3,18 +3,28 @@ package demos.cofetarie.controller;
 
 import demos.cofetarie.model.Client;
 import demos.cofetarie.model.Cofetarie;
+import lombok.AllArgsConstructor;
 
-import java.util.List;
 
-
+@AllArgsConstructor
 public class CofetarieController {
 
 
-  private Cofetarie cofetarie;
+    private Cofetarie cofetarie;
 
 
-  void addClient (Client clientNou) {
+    public void addClient(Client clientNou) {
+        cofetarie.getListaClienti().add(clientNou);
+        for (Client client : cofetarie.getListaClienti()) {
+            System.out.println(client);
+        }
 
-    cofetarie.setListaClienti((List<Client>) clientNou);
-  }
+    }
+
+    public void deleteClient(Client clientExistent) {
+        cofetarie.getListaClienti().remove(clientExistent);
+        for (Client client : cofetarie.getListaClienti()) {
+            System.out.println("Clientul " + client.getNume() + " a fost sters");
+        }
+    }
 }
