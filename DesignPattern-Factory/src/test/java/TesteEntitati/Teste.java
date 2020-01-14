@@ -10,35 +10,35 @@ import org.junit.jupiter.api.Test;
 
 public class Teste {
 
-  @Test
-  private void testCerc () {
+    @Test
+    private void testCerc() {
 
-    FiguraGeometrica cerculMeu = FiguriGeometriceFactory.creazaFigura(FiguriGeometrice.CERC);
-    cerculMeu.calculeazaPerimetru();
-    Assertions.assertEquals(77.28317927830892, cerculMeu.calculeazaPerimetru());
-    cerculMeu.afiseazaPerimetru();
-  }
-
-
-  @Test
-  private void testPatrat () {
-
-    FiguraGeometrica patratulMeu = FiguriGeometriceFactory.creazaFigura(FiguriGeometrice.PATRAT);
-    patratulMeu.calculeazaPerimetru();
-    Assertions.assertEquals(20, patratulMeu.calculeazaPerimetru());
-    patratulMeu.afiseazaPerimetru();
-  }
+        FiguraGeometrica cerculMeu = FiguriGeometriceFactory.creazaFigura(FiguriGeometrice.CERC);
+        cerculMeu.calculeazaPerimetru();
+        Assertions.assertEquals(77.28317927830892, cerculMeu.calculeazaPerimetru());
+        cerculMeu.afiseazaPerimetru();
+    }
 
 
-  @Test
-  private void testDreptunghi () {
+    @Test
+    private void testPatrat() {
 
-    FiguraGeometrica
-        dreptunghiulMeu
-        = FiguriGeometriceFactory.creazaFigura(FiguriGeometrice.DREPUNGHI);
-    dreptunghiulMeu.calculeazaPerimetru();
-    Assertions.assertEquals(18, dreptunghiulMeu.calculeazaPerimetru());
-    dreptunghiulMeu.afiseazaPerimetru();
-  }
+        FiguraGeometrica patratulMeu = FiguriGeometriceFactory.creazaFigura(FiguriGeometrice.PATRAT);
+        patratulMeu.calculeazaPerimetru();
+        Assertions.assertEquals(20, patratulMeu.calculeazaPerimetru());
+        patratulMeu.afiseazaPerimetru();
+    }
+
+
+    @Test
+    private void testDreptunghi() {
+
+        FiguraGeometrica
+                dreptunghiulMeu
+                = FiguriGeometriceFactory.creazaFigura(FiguriGeometrice.DREPUNGHI);
+        dreptunghiulMeu.calculeazaPerimetru();
+        Assertions.assertEquals(18, dreptunghiulMeu.calculeazaPerimetru());
+        dreptunghiulMeu.afiseazaPerimetru();
+    }
 
 }

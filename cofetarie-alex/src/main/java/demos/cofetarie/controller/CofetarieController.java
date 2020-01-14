@@ -9,6 +9,9 @@ import demos.cofetarie.view.CofetarieView;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
+import java.util.Comparator;
+import java.util.List;
+
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -21,9 +24,19 @@ public class CofetarieController {
 
     public void adaugaClient(Client clientNou) {
         modelCofetarie.getListaClienti().add(clientNou);
-        for (Client client : modelCofetarie.getListaClienti()) {
-            System.out.println(client);
+    }
+
+    public void adaugaClienti(Client... clientiNoi) {
+        List<Client> listaClienti = modelCofetarie.getListaClienti();
+        for (Client clientNou : clientiNoi) {
+            listaClienti.add(clientNou);
         }
+    }
+
+    public void afisareListaClienti() {
+        List<Client> clientList = modelCofetarie.getListaClienti();
+        System.out.println("afisare lista clienti");
+        clientList.forEach(System.out::println);
     }
 
     public void stergeClient(Client clientExistent) {
@@ -36,6 +49,14 @@ public class CofetarieController {
     public void adaugaProdusCofetarie(ProdusCofetarie produsNou) {
         modelCofetarie.getProduseCofetarie().add(produsNou);
     }
+
+    public void adaugaProduseCofetarie(ProdusCofetarie... produseNoi) {
+        List<ProdusCofetarie> listaProduse = modelCofetarie.getProduseCofetarie();
+        for (ProdusCofetarie produsCofetarieNou : produseNoi) {
+            listaProduse.add(produsCofetarieNou);
+        }
+    }
+
 
     public void stergeProdusCofetarie(ProdusCofetarie produsExistent) {
         modelCofetarie.getProduseCofetarie().remove(produsExistent);
@@ -50,6 +71,8 @@ public class CofetarieController {
     }
 
     public void afiseazaPreturiProduseCofetarieCrescator() {
+        List<ProdusCofetarie> listaProduse = modelCofetarie.getProduseCofetarie();
+        listaProduse.sort(Comparator.comparing(ProdusCofetarie::getPretProdusCofetarie));
         for (ProdusCofetarie produsCofetarie : modelCofetarie.getProduseCofetarie()) {
             System.out.println(produsCofetarie.getPretProdusCofetarie());
         }

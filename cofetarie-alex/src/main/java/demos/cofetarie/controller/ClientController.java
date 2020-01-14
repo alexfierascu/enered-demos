@@ -118,6 +118,5 @@ public class ClientController implements ClientControllerInterface {
     public void afisareSpecialeInformatiiClient() {
 
         viewClient.afisareInformatiiClient(modelClient);
-
     }
 }
