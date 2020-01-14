@@ -9,8 +9,12 @@ import demos.cofetarie.view.CofetarieView;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.Comparator;
 import java.util.List;
+import java.util.Map;
+import java.util.Scanner;
 
 
 @AllArgsConstructor
@@ -75,6 +79,33 @@ public class CofetarieController {
         listaProduse.sort(Comparator.comparing(ProdusCofetarie::getPretProdusCofetarie));
         for (ProdusCofetarie produsCofetarie : modelCofetarie.getProduseCofetarie()) {
             System.out.println(produsCofetarie.getPretProdusCofetarie());
+        }
+    }
+
+    public void introducereProgramFunctionare() {
+        Map<String, String> orar = modelCofetarie.getOrar();
+        orar.put("Luni", "09:00-18:00");
+    }
+
+    public void introducereProgramFunctionare2() {
+        Map<String, String> orar = modelCofetarie.getOrar();
+        System.out.println("Introduceti programul de functionare al cofetariei in urmatorul format:\n Zi,hh:mm-hh:mm");
+        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
+        Scanner scanner = new Scanner(System.in);
+        String entry;
+        String[] entryValues;
+        do {
+            entry = scanner.nextLine();
+            entryValues = entry.split(",");
+            orar.put(entryValues[0], entryValues[1]);
+        }
+        while (!entryValues[0].equals("Duminica"));
+    }
+
+    public void afisareProgramFunctionare() {
+        Map<String, String> orar = modelCofetarie.getOrar();
+        for (String i : orar.keySet()) {
+            System.out.println("Orarul de " + i + " este " + orar.get(i));
         }
     }
 }

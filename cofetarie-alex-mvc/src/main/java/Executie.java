@@ -18,14 +18,7 @@ public class Executie {
         ClientView view = new ClientView();
 
         ClientController Cristi = new ClientController(client, view);
-//        Client c = Client.builder().nume("alex").build();
-//        System.out.println(c.getNume());
-//
-////    Cristi.afisareNumeClient();
-////    Cristi.updateClient("nume", "Motrescu");
-////    Cristi.afisareNumeClient();
-//    Cristi.makePayment(100);
-//    Cristi.afisareSpecialeInformatiiClient();
+
 
         Client x = Client.builder().nume("Alex").build();
         Client y = Client.builder().nume("test").build();
@@ -38,6 +31,10 @@ public class Executie {
         cofetarieController.adaugaProduseCofetarie(savarina, ecler);
         cofetarieController.afiseazaPreturiProduseCofetarieCrescator();
         cofetarieController.afisareListaClienti();
+        // cofetarieController.introducereProgramFunctionare();
+
+        cofetarieController.introducereProgramFunctionare2();
+        cofetarieController.afisareProgramFunctionare();
 
 
     }
