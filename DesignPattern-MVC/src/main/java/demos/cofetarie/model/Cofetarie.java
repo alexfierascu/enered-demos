@@ -6,7 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.ArrayList;
-import java.util.HashMap;
+import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -24,5 +24,5 @@ public class Cofetarie {
 
     private List<EvenimenteSpeciale> evenimenteCofetarie = new ArrayList<>();
 
-    private Map<String, String> orar = new HashMap<>();
+    private Map<String, String> orar = new LinkedHashMap<>();
 }

@@ -9,8 +9,6 @@ import demos.cofetarie.view.CofetarieView;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 
-import java.io.BufferedReader;
-import java.io.InputStreamReader;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
@@ -77,7 +75,7 @@ public class CofetarieController {
     public void afiseazaPreturiProduseCofetarieCrescator() {
         List<ProdusCofetarie> listaProduse = modelCofetarie.getProduseCofetarie();
         listaProduse.sort(Comparator.comparing(ProdusCofetarie::getPretProdusCofetarie));
-        for (ProdusCofetarie produsCofetarie : modelCofetarie.getProduseCofetarie()) {
+        for (ProdusCofetarie produsCofetarie : listaProduse) {
             System.out.println(produsCofetarie.getPretProdusCofetarie());
         }
     }
@@ -90,7 +88,6 @@ public class CofetarieController {
     public void introducereProgramFunctionare2() {
         Map<String, String> orar = modelCofetarie.getOrar();
         System.out.println("Introduceti programul de functionare al cofetariei in urmatorul format:\n Zi,hh:mm-hh:mm");
-        BufferedReader in = new BufferedReader(new InputStreamReader(System.in));
         Scanner scanner = new Scanner(System.in);
         String entry;
         String[] entryValues;

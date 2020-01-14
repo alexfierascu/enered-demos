@@ -33,8 +33,8 @@ public class Executie {
         cofetarieController.afisareListaClienti();
         // cofetarieController.introducereProgramFunctionare();
 
-        cofetarieController.introducereProgramFunctionare2();
-        cofetarieController.afisareProgramFunctionare();
+//        cofetarieController.introducereProgramFunctionare2();
+//        cofetarieController.afisareProgramFunctionare();
 
 
     }
