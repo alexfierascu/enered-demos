@@ -22,11 +22,12 @@
         <module>JavaBasics</module>
         <module>JavaOOPDemo1-Clase</module>
         <module>Java101</module>
+        <module>DesignPattern-MVC</module>
     </modules>
 
     <properties>
         <junit_version>5.5.0</junit_version>
-        <lombok_version>1.18.8</lombok_version>
+        <lombok_version>1.18.10</lombok_version>
     </properties>
 
 
